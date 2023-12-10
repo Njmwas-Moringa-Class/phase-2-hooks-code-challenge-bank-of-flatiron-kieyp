@@ -21,8 +21,8 @@ function AccountContainer() {
     fetchData();
   }, [searchTerm]);
 
-  function handleSearch(e) {
-    setSearchTerm(e.target.value);
+  function handleSearch(event) {
+    setSearchTerm(event.target.value);
   }
 
   return (

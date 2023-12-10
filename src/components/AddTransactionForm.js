@@ -10,16 +10,16 @@ function AddTransactionForm() {
 
   const [formData, setFormData] = useState(initialState);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     fetch("http://localhost:8001/transactions", {
       method: "POST",
