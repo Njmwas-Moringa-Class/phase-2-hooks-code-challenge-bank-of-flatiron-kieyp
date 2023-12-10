@@ -1,28 +1,38 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList() {
+const TransactionsList = ({ transactions }) => {
+  const renderTransactions = () => {
+    return transactions.map((item) => (
+      <Transaction
+        key={item.id}
+        date={item.date}
+        description={item.description}
+        category={item.category}
+        amount={item.amount}
+      />
+    ));
+  };
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
         <tr>
-          <th>
-            <h3 className="ui center aligned header">Date</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Description</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Category</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Amount</h3>
-          </th>
+          <TableHeader title="Date" />
+          <TableHeader title="Description" />
+          <TableHeader title="Category" />
+          <TableHeader title="Amount" />
         </tr>
-        {/* render a list of <Transaction> components here */}
+        {renderTransactions()}
       </tbody>
     </table>
   );
-}
+};
+
+const TableHeader = ({ title }) => (
+  <th>
+    <h3 className="ui center aligned header">{title}</h3>
+  </th>
+);
 
 export default TransactionsList;

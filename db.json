@@ -83,6 +83,13 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2023-12-10",
+      "description": "Kristmas sherehe",
+      "category": "Expense",
+      "amount": "100000",
+      "id": 13
     }
   ]
 }
